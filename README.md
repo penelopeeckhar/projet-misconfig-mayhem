@@ -325,6 +325,12 @@ curl http://localhost/uploads/
 
 ---
 
+## DEMO
+
+> version accélérée et expliquée : https://drive.google.com/file/d/1DnCVxZtxUxzv8Z2Nl-TPwiX7uwfLlcem/view?usp=sharing            
+
+> version bien détaillée étape par étape : https://drive.google.com/file/d/1LwocpI1v_eGkhRuwchrtbljWwAjF-J5Y/view?usp=sharing
+
 ## 👩‍🎓 Auteure
 
 **Abir Majdi**  
