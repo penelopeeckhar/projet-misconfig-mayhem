@@ -1,0 +1,55 @@
+events {
+    worker_connections 1024;
+}
+
+http {
+    include /etc/nginx/mime.types;
+    default_type application/octet-stream;
+
+    # VULNÉRABILITÉ M3 : server_tokens ON - Version nginx exposée
+    server_tokens on;
+
+    upstream app_backend {
+        server app:8000;
+    }
+
+    server {
+        listen 80;
+        server_name localhost;
+
+        # VULNÉRABILITÉ M3 : Directory listing activé sur /uploads/
+        location /uploads/ {
+            alias /app/uploads/;
+            autoindex on;           # ← VULNÉRABLE : Liste les fichiers
+            autoindex_exact_size off;
+            autoindex_localtime on;
+        }
+
+        # Proxy vers FastAPI - TOUS les endpoints exposés
+        location / {
+            proxy_pass http://app_backend;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            
+            # VULNÉRABILITÉ : CORS ouvert à tous
+            add_header 'Access-Control-Allow-Origin' '*' always;
+            add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, OPTIONS' always;
+            add_header 'Access-Control-Allow-Headers' '*' always;
+        }
+
+        # VULNÉRABILITÉ M2 : Debug endpoint exposé via Nginx
+        location /debug/ {
+            proxy_pass http://app_backend/debug/;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+        }
+
+        # Pas de headers de sécurité (vulnérable)
+        # X-Frame-Options: MANQUANT
+        # X-Content-Type-Options: MANQUANT
+        # Content-Security-Policy: MANQUANT
+        # X-XSS-Protection: MANQUANT
+    }
+}

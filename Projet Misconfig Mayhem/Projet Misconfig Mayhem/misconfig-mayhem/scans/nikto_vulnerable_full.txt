@@ -1,0 +1,21 @@
+- Nikto v2.1.5/2.1.5
++ Target Host: localhost
++ Target Port: 80
++ GET /: The anti-clickjacking X-Frame-Options header is not present.
++ OPTIONS /: Allowed HTTP Methods: GET 
+- Nikto v2.1.5/2.1.5
++ Target Host: localhost
++ Target Port: 80
++ GET /: The anti-clickjacking X-Frame-Options header is not present.
++ GET /: Uncommon header 'access-control-allow-methods' found, with contents: GET, POST, PUT, DELETE, OPTIONS
++ GET /: Uncommon header 'access-control-allow-headers' found, with contents: *
++ GET /: Uncommon header 'access-control-allow-origin' found, with contents: *
++ OPTIONS /: Allowed HTTP Methods: GET 
+- Nikto v2.1.5/2.1.5
++ Target Host: localhost
++ Target Port: 80
++ GET /: The anti-clickjacking X-Frame-Options header is not present.
++ GET /: Uncommon header 'access-control-allow-headers' found, with contents: *
++ GET /: Uncommon header 'access-control-allow-methods' found, with contents: GET, POST, PUT, DELETE, OPTIONS
++ GET /: Uncommon header 'access-control-allow-origin' found, with contents: *
++ OPTIONS /: Allowed HTTP Methods: GET 

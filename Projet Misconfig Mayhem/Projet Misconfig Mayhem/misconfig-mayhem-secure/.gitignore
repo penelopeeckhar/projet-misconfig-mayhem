@@ -1,0 +1,46 @@
+# ✅ CRITIQUE : Ne JAMAIS versionner les secrets
+.env
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Fichiers uploadés
+uploads/*
+!uploads/.gitkeep
+
+# Logs
+*.log
+logs/
+
+# Docker
+*.pid
+*.seed
+*.pid.lock
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Backups
+*.bak
+*.backup
+*~
+
+# Fichiers vulnérables (pour référence)
+*.vulnerable

@@ -1,0 +1,73 @@
+version: '3.8'
+
+services:
+  # Base de données PostgreSQL - NON exposée publiquement
+  db:
+    image: postgres:15
+    container_name: sharedb-secure
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    # PAS de section ports: -> Non accessible depuis l'hôte
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - sharepy-network
+
+  # Stockage MinIO - NON exposé publiquement
+  minio:
+    image: minio/minio:latest
+    container_name: shareminio-secure
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+    # PAS de section ports: -> Non accessible depuis l'hôte
+    volumes:
+      - minio_data:/data
+    networks:
+      - sharepy-network
+
+  # Application FastAPI - NON exposée publiquement
+  app:
+    build: ./app
+    container_name: shareapp-secure
+    # PAS de section ports: -> Non accessible depuis l'hôte
+    environment:
+      - DEBUG=False
+      - LOG_LEVEL=INFO
+      - DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
+      - MINIO_ENDPOINT=minio:9000
+      - MINIO_ACCESS_KEY=${MINIO_ROOT_USER}
+      - MINIO_SECRET_KEY=${MINIO_ROOT_PASSWORD}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+    volumes:
+      - ./uploads:/app/uploads
+    depends_on:
+      - db
+      - minio
+    networks:
+      - sharepy-network
+
+  # Nginx reverse proxy - SEUL point d'entrée public
+  nginx:
+    image: nginx:latest
+    container_name: sharenginx-secure
+    ports:
+      - "80:80"  # SEUL port exposé publiquement
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./uploads:/app/uploads:ro
+    depends_on:
+      - app
+    networks:
+      - sharepy-network
+
+volumes:
+  postgres_data:
+  minio_data:
+
+networks:
+  sharepy-network:
+    driver: bridge

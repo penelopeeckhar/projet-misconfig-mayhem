@@ -1,0 +1,128 @@
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-12-27 10:26 UTC
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00070s latency).
+
+PORT     STATE SERVICE     VERSION
+80/tcp   open  http        nginx 1.29.4
+5432/tcp open  postgresql  PostgreSQL DB 9.6.0 or later
+8000/tcp open  http-alt    uvicorn
+9000/tcp open  cslistener?
+9001/tcp open  tor-orport?
+4 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port5432-TCP:V=7.94SVN%I=7%D=12/27%Time=694FB44D%P=x86_64-pc-linux-gnu%
+SF:r(SMBProgNeg,8C,"E\0\0\0\x8bSFATAL\0VFATAL\0C0A000\0Munsupported\x20fro
+SF:ntend\x20protocol\x2065363\.19778:\x20server\x20supports\x203\.0\x20to\
+SF:x203\.0\0Fpostmaster\.c\0L2202\0RProcessStartupPacket\0\0");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port8000-TCP:V=7.94SVN%I=7%D=12/27%Time=694FB452%P=x86_64-pc-linux-gnu%
+SF:r(GetRequest,127,"HTTP/1\.1\x20200\x20OK\r\ndate:\x20Sat,\x2027\x20Dec\
+SF:x202025\x2010:26:26\x20GMT\r\nserver:\x20uvicorn\r\ncontent-length:\x20
+SF:169\r\ncontent-type:\x20application/json\r\n\r\n{\"message\":\"Bienvenu
+SF:e\x20sur\x20SharePy\x20-\x20Mini\x20Dropbox\",\"version\":\"1\.0\.0\",\
+SF:"endpoints\":{\"login\":\"/login\",\"upload\":\"/upload\",\"files\":\"/
+SF:files\",\"download\":\"/download/{filename}\"}}")%r(X11Probe,C0,"HTTP/1
+SF:\.1\x20400\x20Bad\x20Request\r\ndate:\x20Sat,\x2027\x20Dec\x202025\x201
+SF:0:26:26\x20GMT\r\nserver:\x20uvicorn\r\ncontent-type:\x20text/plain;\x2
+SF:0charset=utf-8\r\ncontent-length:\x2030\r\nconnection:\x20close\r\n\r\n
+SF:Invalid\x20HTTP\x20request\x20received\.")%r(FourOhFourRequest,9A,"HTTP
+SF:/1\.1\x20404\x20Not\x20Found\r\ndate:\x20Sat,\x2027\x20Dec\x202025\x201
+SF:0:26:26\x20GMT\r\nserver:\x20uvicorn\r\ncontent-length:\x2022\r\nconten
+SF:t-type:\x20application/json\r\n\r\n{\"detail\":\"Not\x20Found\"}")%r(So
+SF:cks5,C0,"HTTP/1\.1\x20400\x20Bad\x20Request\r\ndate:\x20Sat,\x2027\x20D
+SF:ec\x202025\x2010:26:26\x20GMT\r\nserver:\x20uvicorn\r\ncontent-type:\x2
+SF:0text/plain;\x20charset=utf-8\r\ncontent-length:\x2030\r\nconnection:\x
+SF:20close\r\n\r\nInvalid\x20HTTP\x20request\x20received\.")%r(Socks4,C0,"
+SF:HTTP/1\.1\x20400\x20Bad\x20Request\r\ndate:\x20Sat,\x2027\x20Dec\x20202
+SF:5\x2010:26:26\x20GMT\r\nserver:\x20uvicorn\r\ncontent-type:\x20text/pla
+SF:in;\x20charset=utf-8\r\ncontent-length:\x2030\r\nconnection:\x20close\r
+SF:\n\r\nInvalid\x20HTTP\x20request\x20received\.")%r(HTTPOptions,B8,"HTTP
+SF:/1\.1\x20405\x20Method\x20Not\x20Allowed\r\ndate:\x20Sat,\x2027\x20Dec\
+SF:x202025\x2010:26:26\x20GMT\r\nserver:\x20uvicorn\r\nallow:\x20GET\r\nco
+SF:ntent-length:\x2031\r\ncontent-type:\x20application/json\r\n\r\n{\"deta
+SF:il\":\"Method\x20Not\x20Allowed\"}")%r(RTSPRequest,B8,"HTTP/1\.1\x20405
+SF:\x20Method\x20Not\x20Allowed\r\ndate:\x20Sat,\x2027\x20Dec\x202025\x201
+SF:0:26:26\x20GMT\r\nserver:\x20uvicorn\r\nallow:\x20GET\r\ncontent-length
+SF::\x2031\r\ncontent-type:\x20application/json\r\n\r\n{\"detail\":\"Metho
+SF:d\x20Not\x20Allowed\"}");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port9000-TCP:V=7.94SVN%I=7%D=12/27%Time=694FB44D%P=x86_64-pc-linux-gnu%
+SF:r(GenericLines,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\
+SF:x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20B
+SF:ad\x20Request")%r(GetRequest,2B0,"HTTP/1\.0\x20400\x20Bad\x20Request\r\
+SF:nAccept-Ranges:\x20bytes\r\nContent-Length:\x20276\r\nContent-Type:\x20
+SF:application/xml\r\nServer:\x20MinIO\r\nStrict-Transport-Security:\x20ma
+SF:x-age=31536000;\x20includeSubDomains\r\nVary:\x20Origin\r\nX-Amz-Id-2:\
+SF:x20dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8\r\n
+SF:X-Amz-Request-Id:\x2018850B994E28EA87\r\nX-Content-Type-Options:\x20nos
+SF:niff\r\nX-Xss-Protection:\x201;\x20mode=block\r\nDate:\x20Sat,\x2027\x2
+SF:0Dec\x202025\x2010:26:21\x20GMT\r\n\r\n<\?xml\x20version=\"1\.0\"\x20en
+SF:coding=\"UTF-8\"\?>\n<Error><Code>InvalidRequest</Code><Message>Invalid
+SF:\x20Request\x20\(invalid\x20argument\)</Message><Resource>/</Resource><
+SF:RequestId>18850B994E28EA87</RequestId><HostId>dd9025bab4ad464b049177c95
+SF:eb6ebf374d3b3fd1af9251148b658df7ac2e3e8</HostId></Error>")%r(HTTPOption
+SF:s,59,"HTTP/1\.0\x20200\x20OK\r\nVary:\x20Origin\r\nDate:\x20Sat,\x2027\
+SF:x20Dec\x202025\x2010:26:21\x20GMT\r\nContent-Length:\x200\r\n\r\n")%r(R
+SF:TSPRequest,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20t
+SF:ext/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x
+SF:20Request")%r(Help,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Ty
+SF:pe:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\
+SF:x20Bad\x20Request")%r(SSLSessionReq,67,"HTTP/1\.1\x20400\x20Bad\x20Requ
+SF:est\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20
+SF:close\r\n\r\n400\x20Bad\x20Request")%r(TerminalServerCookie,67,"HTTP/1\
+SF:.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=
+SF:utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request")%r(TLSSessi
+SF:onReq,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/p
+SF:lain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Req
+SF:uest")%r(Kerberos,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Typ
+SF:e:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x
+SF:20Bad\x20Request");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port9001-TCP:V=7.94SVN%I=7%D=12/27%Time=694FB44D%P=x86_64-pc-linux-gnu%
+SF:r(GenericLines,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\
+SF:x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20B
+SF:ad\x20Request")%r(GetRequest,702,"HTTP/1\.0\x20200\x20OK\r\nAccept-Rang
+SF:es:\x20bytes\r\nContent-Length:\x201309\r\nContent-Security-Policy:\x20
+SF:default-src\x20'self'\x20'unsafe-eval'\x20'unsafe-inline';\x20script-sr
+SF:c\x20'self'\x20https://unpkg\.com;\x20\x20connect-src\x20'self'\x20http
+SF:s://unpkg\.com;\r\nContent-Type:\x20text/html\r\nLast-Modified:\x20Sat,
+SF:\x2027\x20Dec\x202025\x2010:26:21\x20GMT\r\nReferrer-Policy:\x20strict-
+SF:origin-when-cross-origin\r\nServer:\x20MinIO\x20Console\r\nX-Content-Ty
+SF:pe-Options:\x20nosniff\r\nX-Frame-Options:\x20DENY\r\nX-Xss-Protection:
+SF:\x201;\x20mode=block\r\nDate:\x20Sat,\x2027\x20Dec\x202025\x2010:26:21\
+SF:x20GMT\r\n\r\n<!doctype\x20html><html\x20lang=\"en\"><head><meta\x20cha
+SF:rset=\"utf-8\"/><base\x20href=\"/\"/><meta\x20content=\"width=device-wi
+SF:dth,initial-scale=1\"\x20name=\"viewport\"/><meta\x20content=\"#081C42\
+SF:"\x20media=\"\(prefers-color-scheme:\x20light\)\"\x20name=\"theme-color
+SF:\"/><meta\x20content=\"#081C42\"\x20media=\"\(prefers-color-scheme:\x20
+SF:dark\)\"\x20name=\"theme-color\"/><meta\x20content=\"MinIO\x20Console\"
+SF:\x20name=\"description\"/><meta\x20name=\"minio-license\"\x20content=\"
+SF:agpl\"/><link\x20href=\"\./s")%r(SSLSessionReq,67,"HTTP/1\.1\x20400\x20
+SF:Bad\x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConn
+SF:ection:\x20close\r\n\r\n400\x20Bad\x20Request")%r(TLSSessionReq,67,"HTT
+SF:P/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain;\x20char
+SF:set=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request")%r(SSLv
+SF:23SessionReq,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x2
+SF:0text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad
+SF:\x20Request")%r(tarantool,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nCon
+SF:tent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\
+SF:r\n400\x20Bad\x20Request")%r(HTTPOptions,702,"HTTP/1\.0\x20200\x20OK\r\
+SF:nAccept-Ranges:\x20bytes\r\nContent-Length:\x201309\r\nContent-Security
+SF:-Policy:\x20default-src\x20'self'\x20'unsafe-eval'\x20'unsafe-inline';\
+SF:x20script-src\x20'self'\x20https://unpkg\.com;\x20\x20connect-src\x20's
+SF:elf'\x20https://unpkg\.com;\r\nContent-Type:\x20text/html\r\nLast-Modif
+SF:ied:\x20Sat,\x2027\x20Dec\x202025\x2010:26:36\x20GMT\r\nReferrer-Policy
+SF::\x20strict-origin-when-cross-origin\r\nServer:\x20MinIO\x20Console\r\n
+SF:X-Content-Type-Options:\x20nosniff\r\nX-Frame-Options:\x20DENY\r\nX-Xss
+SF:-Protection:\x201;\x20mode=block\r\nDate:\x20Sat,\x2027\x20Dec\x202025\
+SF:x2010:26:36\x20GMT\r\n\r\n<!doctype\x20html><html\x20lang=\"en\"><head>
+SF:<meta\x20charset=\"utf-8\"/><base\x20href=\"/\"/><meta\x20content=\"wid
+SF:th=device-width,initial-scale=1\"\x20name=\"viewport\"/><meta\x20conten
+SF:t=\"#081C42\"\x20media=\"\(prefers-color-scheme:\x20light\)\"\x20name=\
+SF:"theme-color\"/><meta\x20content=\"#081C42\"\x20media=\"\(prefers-color
+SF:-scheme:\x20dark\)\"\x20name=\"theme-color\"/><meta\x20content=\"MinIO\
+SF:x20Console\"\x20name=\"description\"/><meta\x20name=\"minio-license\"\x
+SF:20content=\"agpl\"/><link\x20href=\"\./s");
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 97.62 seconds

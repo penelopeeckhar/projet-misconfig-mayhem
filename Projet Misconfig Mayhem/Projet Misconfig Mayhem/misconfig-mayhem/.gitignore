@@ -1,0 +1,9 @@
+# Ne JAMAIS versionner les secrets
+.env
+*.pyc
+__pycache__/
+uploads/*
+!uploads/.gitkeep
+
+# Docker
+*.log

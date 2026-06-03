@@ -1,0 +1,27 @@
+- Nikto v2.1.5/2.1.5
++ Target Host: localhost
++ Target Port: 80
++ GET /: Uncommon header 'referrer-policy' found, with contents: no-referrer-when-downgrade
++ GET /: Uncommon header 'x-frame-options' found, with contents: SAMEORIGIN
++ GET /: Uncommon header 'x-content-type-options' found, with contents: nosniff
++ GET /: Uncommon header 'x-xss-protection' found, with contents: 1; mode=block
++ GET /: Uncommon header 'content-security-policy' found, with contents: default-src 'self'
++ OPTIONS /: Allowed HTTP Methods: GET 
+- Nikto v2.1.5/2.1.5
++ Target Host: localhost
++ Target Port: 80
++ GET /: Uncommon header 'x-content-type-options' found, with contents: nosniff
++ GET /: Uncommon header 'content-security-policy' found, with contents: default-src 'self'
++ GET /: Uncommon header 'x-frame-options' found, with contents: SAMEORIGIN
++ GET /: Uncommon header 'referrer-policy' found, with contents: no-referrer-when-downgrade
++ GET /: Uncommon header 'x-xss-protection' found, with contents: 1; mode=block
++ OPTIONS /: Allowed HTTP Methods: GET 
+- Nikto v2.1.5/2.1.5
++ Target Host: localhost
++ Target Port: 80
++ GET /: Uncommon header 'x-frame-options' found, with contents: SAMEORIGIN
++ GET /: Uncommon header 'referrer-policy' found, with contents: no-referrer-when-downgrade
++ GET /: Uncommon header 'content-security-policy' found, with contents: default-src 'self'
++ GET /: Uncommon header 'x-content-type-options' found, with contents: nosniff
++ GET /: Uncommon header 'x-xss-protection' found, with contents: 1; mode=block
++ OPTIONS /: Allowed HTTP Methods: GET 
